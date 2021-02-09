@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+}
+.page {
+    margin: 20px;
+}
+.page__content {
+ display: flex;
+ flex-direction: column; 
+}
+.shows__list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.shows__list--element {
+    list-style: none; 
+    padding: 10px 10px 10px 0px;
+}
