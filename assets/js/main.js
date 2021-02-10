@@ -13,7 +13,7 @@ let favoriteShows = [];
 
 //Traer datos del API según la búsqueda de la usuaria
 function getDataFromApi() {
-fetch(`//api.tvmaze.com//search/shows?q=${inputElement.value}`)
+fetch(`http://api.tvmaze.com//search/shows?q=${inputElement.value}`)
   .then((response) => response.json())
   .then((data) => {
     shows = data;
