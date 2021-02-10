@@ -10,6 +10,7 @@
     font-family: var(--font-Roboto);
     font-weight: normal;
     color: grey;
+    background-color: lightcyan
 }
 
 .page {
@@ -32,7 +33,15 @@
     width: 250px;
     height: 30px;
     padding-left: 5px;
+    border-style: solid;
     border-color: turquoise;
+    background-color: white;
+    border-radius: 5px;
+    outline: none;
+}
+.search__input:focus{
+    border-color: teal;
+    
 }
 .search__button {
     width: 60px;
@@ -42,7 +51,9 @@
     color: teal;
     background-color: turquoise;
     border-color: teal;
-    border-width: 2px;
+    border-style: solid;
+    outline: none;
+    
 }
 .sections-container {
     display: flex;
@@ -53,7 +64,6 @@
     border-right-width: 5px;
     border-right-style: solid;
     border-right-color: lightgray;
-    background-color: lightyellow;
 
 }
 .favorites__title {
@@ -67,23 +77,27 @@
     list-style: none;
     display: flex;
     flex-direction: column-reverse;
-    align-items: center;
+  
 }
 .favorites__list--element {
     padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
 .favorite-image{
     width: 150px;
 }
 .favorite-name {
     font-size: 14px;
-    text-align: center;
     color: grey;
+    padding-top: 5px;;
+    text-align: center;
 }
 .shows {
     width: 85%;
     padding-left: 25px;
-    background-color: lightyellow;
 }
 .shows__list {
     display: flex;
@@ -97,7 +111,7 @@
     
 }
 .fav-mode {
-    background-color: rgb(0, 128, 128, 0.6);
+    background-color: rgb(2, 182, 182);
     font-family: var(--font-Hammersmith);
     color: black;
 }
@@ -107,4 +121,5 @@
     font-family: inherit;
     font-weight: 900;
     color: inherit;
+    background-color: inherit;
 }

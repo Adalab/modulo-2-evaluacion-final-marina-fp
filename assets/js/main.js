@@ -101,7 +101,7 @@ const cardsElements = document.querySelectorAll('.js-show');
     }
 }
 
-//Añadir show a al array de favoritos 
+//Añadir show al array de favoritos 
 function handleShows(ev) {
     const clickedShowId = parseInt(ev.currentTarget.id);
     const favoriteFoundIndex = favoriteShows.findIndex(function (favorite) {
@@ -121,7 +121,7 @@ function handleShows(ev) {
     paintFavorites();
 }
 
-//Guardamos el array de favoritas en el LocalStorage pasándolo antes a string
+//Guardamos el array de favoritos en el LocalStorage pasándolo antes a string
 function setInLocalStorage() {
     const stringFavoriteShows = JSON.stringify(favoriteShows);
     localStorage.setItem('favoriteShows', stringFavoriteShows);
@@ -136,8 +136,6 @@ function getFromLocalStorage() {
         const arrayFavorites = JSON.parse(localStorageFavorites);
         favoriteShows = arrayFavorites;
         paintFavorites();
-    } else {
-        getDataFromApi();
     }
 }
 getFromLocalStorage();
