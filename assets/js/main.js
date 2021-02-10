@@ -32,7 +32,7 @@ function paintShows() {
         let nameShow = series.show.name;
         let imageShow = series.show.image;
 
-            //Si es favorita la pinto con una clase más que le da el estilo
+            //Si es favorita la pinto con una clase más que le dará el estilo
             let isFavoriteClass;
             if (isFavoriteShow(series)) {
                 isFavoriteClass = 'fav-mode';
@@ -55,7 +55,28 @@ function paintShows() {
     }
     const showsList = document.querySelector('.js-shows__list');
     showsList.innerHTML = htmlCode;
+    paintFavorites();
     listenToShows();
+}
+
+//Pinto el array de las series marcadas como favoritas en su correspondiente lista
+function paintFavorites() {
+    let htmlCode = '';
+    for (const favorite of favoriteShows) {
+        let nameFavorite = favorite.show.name;
+        let imageFavorite = favorite.show.image;
+        
+        htmlCode += `<li class="favorites__list--element">`
+        const noImage = 'https://via.placeholder.com/210x295/ffffff/666666/?text=TV'
+            if (imageFavorite === null) {
+                htmlCode += `<img src="${noImage}" class="favorite-image" alt="No image available" />`
+            } else {
+                htmlCode += `<img src="${imageFavorite.medium}" class="show-image" alt="${nameFavorite} poster" />`
+            }
+        htmlCode += `<h5 class="show-name">${nameFavorite}</h5>`;
+        htmlCode += '</li>'
+    }
+    favoritesListElement.innerHTML = htmlCode
 }
 
 //Definir si una serie es favorita o no
@@ -82,12 +103,12 @@ const cardsElements = document.querySelectorAll('.js-show');
 function handleShows(ev) {
     const clickedShowId = parseInt(ev.currentTarget.id);
     const favoriteFoundIndex = favoriteShows.findIndex(function (favorite) {
-        return favorite.id === clickedShowId;
+        return favorite.show.id === clickedShowId;
     });
 
     if (favoriteFoundIndex === -1) {
         const showFound = shows.find(function (series) {
-            return series.id === clickedShowId;
+            return series.show.id === clickedShowId;
         });
         favoriteShows.push(showFound);
     } else {
