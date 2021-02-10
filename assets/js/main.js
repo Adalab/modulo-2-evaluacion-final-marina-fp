@@ -13,7 +13,7 @@ let favoriteShows = [];
 
 //Traer datos del API según la búsqueda de la usuaria
 function getDataFromApi() {
-fetch(`http://api.tvmaze.com//search/shows?q=${inputElement.value}`)
+fetch(`//api.tvmaze.com//search/shows?q=${inputElement.value}`)
   .then((response) => response.json())
   .then((data) => {
     shows = data;
@@ -84,9 +84,9 @@ function paintFavorites() {
             if (imageFavorite === null) {
                 htmlCode += `<img src="${noImage}" class="favorite-image" alt="No image available" />`
             } else {
-                htmlCode += `<img src="${imageFavorite.medium}" class="show-image" alt="${nameFavorite} poster" />`
+                htmlCode += `<img src="${imageFavorite.medium}" class="favorite-image" alt="${nameFavorite} poster" />`
             }
-        htmlCode += `<h5 class="show-name">${nameFavorite}</h5>`;
+        htmlCode += `<h5 class="favorite-name">${nameFavorite}</h5>`;
         htmlCode += '</li>'
     }
     favoritesListElement.innerHTML = htmlCode

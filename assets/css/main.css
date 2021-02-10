@@ -1,16 +1,89 @@
+:root { 
+    --font-Hammersmith: "Hammersmith", sans-serif;
+    --font-Roboto: "Roboto", sans-serif;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-Roboto);
     font-weight: normal;
+    color: grey;
 }
+
 .page {
     margin: 20px;
 }
+.header__title {
+    text-align: center;
+    color: teal;
+    font-weight: 900;
+    text-transform: uppercase;
+}
 .page__content {
- display: flex;
- flex-direction: column; 
+    display: flex;
+    flex-direction: column; 
+}
+.search {
+    padding: 15px;
+}
+.search__input{
+    width: 250px;
+    height: 30px;
+    padding-left: 5px;
+    border-color: turquoise;
+}
+.search__button {
+    width: 60px;
+    height: 30px;
+    font-size: 14px;
+    border-radius: 5px;
+    color: teal;
+    background-color: turquoise;
+    border-color: teal;
+    border-width: 2px;
+}
+.sections-container {
+    display: flex;
+    flex-direction: row;
+}
+.favorites {
+    width: 15%;
+    border-right-width: 5px;
+    border-right-style: solid;
+    border-right-color: lightgray;
+    background-color: lightyellow;
+
+}
+.favorites__title {
+    text-align: center;
+    font-size: 18px;
+    color: lightseagreen;
+    padding: 10px 0px;
+    
+}
+.favorites__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+.favorites__list--element {
+    padding-bottom: 10px;
+}
+.favorite-image{
+    width: 150px;
+}
+.favorite-name {
+    font-size: 14px;
+    text-align: center;
+    color: grey;
+}
+.shows {
+    width: 85%;
+    padding-left: 25px;
+    background-color: lightyellow;
 }
 .shows__list {
     display: flex;
@@ -19,8 +92,19 @@
 }
 .shows__list--element {
     list-style: none; 
-    padding: 10px 10px 10px 0px;
+    padding: 10px;
+    margin: 5px;
+    
 }
 .fav-mode {
-    background-color: teal;
+    background-color: rgb(0, 128, 128, 0.6);
+    font-family: var(--font-Hammersmith);
+    color: black;
+}
+.show-name {
+    text-align: center;
+    padding-top: 3px;
+    font-family: inherit;
+    font-weight: 900;
+    color: inherit;
 }

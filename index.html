@@ -4,26 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Buscador de series</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Hammersmith+One&family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/main.css" />
     <link rel="icon" href="assets/images/favicon.png" />
   </head>
   <body class="page">
     <header class="page__header">
-      <h2 class="title">Buscador de series</h2>
+      <h2 class="header__title">Buscador de series</h2>
     </header>
     <main class="page__content">
       <form class="search js-form">
         <input type="text" class="search__input js-input" />
         <input type="button" class="search__button js-button" value="Buscar" />
       </form>
-      <section class="shows">
-        <ul class="shows__list js-shows__list"></ul>
-      </section>
-      <section class="favorites">
-        <h3 class="favorites__title">Mis series favoritas</h3>
-        <ul class="favorites__list js-favorites-list"></ul>
-      </section>
+      <div class="sections-container">
+        <section class="favorites">
+          <h3 class="favorites__title">Mis series favoritas</h3>
+          <ul class="favorites__list js-favorites-list"></ul>
+        </section>
+        <section class="shows">
+          <ul class="shows__list js-shows__list"></ul>
+        </section>
+      </div>
     </main>
     <script src="assets/js/main.js"></script>
   </body>
