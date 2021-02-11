@@ -29,7 +29,8 @@ function paintShows() {
     let idShow = series.show.id;
     let nameShow = series.show.name;
     let imageShow = series.show.image;
-
+    let statusShow = series.show.status;
+    
     //Si es favorita la pinto con una clase más que le dará el estilo en css
     let isFavoriteClass;
     if (isFavoriteShow(series)) {
@@ -50,7 +51,8 @@ function paintShows() {
       htmlCode += `<img src="${imageShow.medium}" class="show-image" alt="${nameShow} poster" />`;
     }
     //Pinto el nombre y cierro la etiqueta de la tarjeta
-    htmlCode += `<h4 class="show-name">${nameShow}</h4>`;
+    htmlCode += `<h4 class="show-name">${nameShow}</h4>`
+    htmlCode += `<p class="show-status">${statusShow}</p>`
     htmlCode += "</li>";
   }
   const showsList = document.querySelector(".js-shows__list");
@@ -88,8 +90,22 @@ function paintFavorites() {
     }
     htmlCode += `<h5 class="favorite-name">${nameFavorite}</h5>`;
     htmlCode += "</li>";
+
   }
+  htmlCode += '<input class="js-log" type="button" value="Log" />';
   favoritesListElement.innerHTML = htmlCode;
+  
+  const logButton = document.querySelector('.js-log');
+  
+  function handleLog(){
+    for (const favorite of favoriteShows) {
+      let nameFavorite = favorite.show.name;
+      console.log(nameFavorite);
+    }
+  }
+  logButton.addEventListener("click", handleLog);
+  
+
 }
 
 //Escucho eventos en las tarjetas de las series al clickarlas
